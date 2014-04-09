@@ -1,3 +1,6 @@
+---
+layout: post
+---
 ### Graph
 
 #### Undirected Graphs
