@@ -51,3 +51,41 @@ layout: post
     2. Add all the edges that incident to the vertex which just be added into the tree *T*, replace the edges from the same source endpoint when the weight is smaller than it was. (This is the major difference between the lazy and eager implement, and can use smaller space than lazy implement)
     3. Find the shortest edges and add the vertex that not in the tree *T* into the *T*.
     4. Repeat until *V* - 1 edges found.
+
+#### Shortest Path
+
+  + Dijkstra algorithm
+
+    Compute all the path from source vertex *s* to any other vertices. Cannot resolve the graph has **negative edges**.
+
+    1. Preparing
+      1. Prepare a distTo\[v\], this storing the shortest path weight from vertex *s* to vertex *v*. Initialize all the items with the MAX value.
+      2. Prepare a edgeTo\[v\], this storing the shortest path from vertex *s* to vertex *v*.
+      3. Prepare a priority queue instant pq\[v\], this storing the shortest path weight from vertex *s* to vertex *v*, the key is *v*, and the value is the path weight. This priority queue sorted by the ascending weight.
+    2. start from the source vertex *s*. Add the *s* into pq\[v\] with value 0.0.
+    3. Pick the most smallest one from pq\[\] as vertex v.
+    4. Iterate each edge that source from vertex v. If the edge e that from v to w has a smaller weight thant distTo\[w\], then replace the distTo\[w\] with the value *distTo\[v\] + e.weight*. , replace edgeTo\[w\] with e, add or replace an item in pq\[\] that with the key is w and the value is *distTo\[v\] + e.weight*. We call this step as name of "Relex"
+    5. Repeat until pq\[\] is empty.
+
+  + Shortest path in DAG
+
+    Compute all the path from the source vertex *s* to any other vertices.
+
+    1. Visiting the DAG with the topological order.
+    2. "Relex" the all the edges that source from the vertex we are visiting.
+    3. Repeat until all the vertices are visitied in the topological order.
+  
+  + Bellman-For algorithm
+  
+    Compute all the path from the source vertex *s* to any other vertices.
+  
+    1. Initialize distTo\[s\] = 0 and distTo\[v\] = INFINITY for all other vertices.
+    2. Visit all the vertices sequently and "Relex" all the edges that source from the vertex being visiting.
+    3. Repeat *V* times for the step 2.
+
+```java
+    for (int i=0; i < G.V(); i++) 
+        for (int v=0; v < G.V(); v++)
+            for (DirectedEdge e : G.adj(v))
+                relax(e);
+```
