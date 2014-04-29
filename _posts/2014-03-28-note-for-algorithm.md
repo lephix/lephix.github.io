@@ -89,3 +89,34 @@ layout: post
             for (DirectedEdge e : G.adj(v))
                 relax(e);
 ```
+
+#### Maxflow and Mincut Problem
+
+  + Maxflow problem
+
+    What's the maximum amount of stuff that we can get through the graph.
+
+    + Ford-Fulkerson Algorithm
+
+    Compute the max flow for a directed graph from source vertex *s* to target vertex *t*.
+
+      + Residual capacity
+
+      Forward edge: ResidualCapacity = EdgeCapacity - EdgeFlow  
+      Backward edge: ResidualCapacity = EdgeFlow
+
+    1. Prepare a *edgeTo* array for storing the augmenting path.
+    2. Find is there any augmenting path from *s* to *t* available.
+      1. Run a BFS on the graph start from *s*, if adjacency edge's residual capacity is larger than 0 and the target vertex of this edge is not visited, than put this vertex in the queue, mark this vertex as visited and store this edge in edgeTo\[vertex\].
+      2. if *t* is marked after the BFS, than there is a augmenting path available. Otherwise, than no.
+    3. If there is a augmenting path available, than visiting the path along with the edgeTo\[*t*\] back to *s*, find the bottle value (max value) can be augmented to the flow.
+    4. Visiting the augmenting path again and augment the bottle value on each edges.
+    5. Until there is no more augmenting path available.
+
+  + Mincut problem
+
+    How do we cut the graph efficientyly, with a minimal amount of work.
+
+    + Find the mincut for the *Maxflow Graph*
+
+      Just run a graph search(BFS, DFS) starting from *s*, and collect all the vertices that the edge toward them when this edge with no full forward or empty backward flow. Than the collection is a Mincut of this Maxflow Graph.
