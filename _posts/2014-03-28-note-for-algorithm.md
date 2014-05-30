@@ -2,7 +2,8 @@
 layout: post
 ---
 
-[Book Reference](http://algs4.cs.princeton.edu/)
+This post is the note for the algorithm course on [Coursera](http://www.coursera.com).
+Here is the link for this [Book](http://algs4.cs.princeton.edu/).
 
 ### Graph
 
@@ -120,3 +121,12 @@ layout: post
     + Find the mincut for the *Maxflow Graph*
 
       Just run a graph search(BFS, DFS) starting from *s*, and collect all the vertices that the edge toward them when this edge with no full forward or empty backward flow. Than the collection is a Mincut of this Maxflow Graph.
+
+### String
+
+#### Key-Indexed Counting
+  
+  + 
+
+  LSD String Sorting (Least-Significant-digit-first String Sort)
+  
