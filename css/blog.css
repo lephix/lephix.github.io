@@ -3,7 +3,7 @@
  */
 
 body {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Arial,sans-serif;
   color: #555;
 }
 
@@ -81,14 +81,18 @@ h6, .h6 {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+.blog-header img {
+  vertical-align: top;
+  padding-top: 5px;
+}
 .blog-title {
-  margin-top: 30px;
-  margin-bottom: 0;
-  font-size: 50px;
+  margin-top: 10px;
+  margin-bottom: 2px;
+  font-size: 25px;
   font-weight: normal;
 }
 .blog-description {
-  font-size: 20px;
+  font-size: 15px;
   color: #999;
 }
 
@@ -98,12 +102,12 @@ h6, .h6 {
  */
 
 .blog-main {
-  font-size: 18px;
+  font-size: 14px;
   line-height: 1.5;
 }
 .blog-excerpt {
-  font-size: 15px;
-  line-height: 1.2;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 /* Sidebar modules for boxing content */
@@ -146,13 +150,32 @@ h6, .h6 {
 }
 .blog-post-title {
   margin-bottom: 5px;
-  font-size: 40px;
+  font-size: 20px;
 }
 .blog-post-meta {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   color: #999;
 }
 
+
+/*
+ * Page posts
+ */
+
+.page-post {
+  margin-bottom: 60px;
+}
+.page-post-title {
+  margin-bottom: 5px;
+  font-size: 30px;
+}
+.page-post-meta {
+  margin-bottom: 20px;
+  color: #999;
+  border-bottom-width: 1px;
+  border-bottom-style: dashed;
+  border-bottom-color: rgb(221, 221, 221);
+}
 
 /*
  * Footer

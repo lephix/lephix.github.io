@@ -3,22 +3,32 @@ layout: post
 ---
 
 This post is the note for the algorithm course on [Coursera](http://www.coursera.com).
+
 Here is the link for this [Book](http://algs4.cs.princeton.edu/).
 
 ### Graph
 
 #### Undirected Graphs
 
-##### Depth-First Search
++ Depth-First Search
 
-##### Breadth-First Search
+  Visit graph from the source vertex and mark it as visited, if found there are un-marked adjacent vertices exist, than recursively visit all those vertices.
+  
+  Using Depth-First search not only determine  whether there exists a path between two given vertices but to find such a path.
+
+
++ Breadth-First Search
+
+  Store the source vertex in a FIFO queue, pick the vertex from the FIFO queue , mark it as visited, and store all the un-marked adjacent vertices into the queue. Stop until the queue is empty.
+
+  We can use algorithm base on this mechanism to find the shortest path between two vertices.
 
 #### Directed Graphs
 + Topological sort
 
   Topological sort is used for resolving precedence-constrained scheduling problem.
 
-    + Only a **DAG** could be applied for this sorting.
+    + Only a **DAG** could be applied for this sorting. DAG means *Directed Acyclic Graph*.
     + Compute DFS on the Digraph, the reverse postorder is the topological sort.
 
 + Strong-connected component
@@ -88,7 +98,7 @@ Here is the link for this [Book](http://algs4.cs.princeton.edu/).
     for (int i=0; i < G.V(); i++) 
         for (int v=0; v < G.V(); v++)
             for (DirectedEdge e : G.adj(v))
-                relax(e);
+                relex(e);
 ```
 
 #### Maxflow and Mincut Problem
@@ -108,7 +118,7 @@ Here is the link for this [Book](http://algs4.cs.princeton.edu/).
 
     1. Prepare a *edgeTo* array for storing the augmenting path.
     2. Find is there any augmenting path from *s* to *t* available.
-      1. Run a BFS on the graph start from *s*, if adjacency edge's residual capacity is larger than 0 and the target vertex of this edge is not visited, than put this vertex in the queue, mark this vertex as visited and store this edge in edgeTo\[vertex\].
+      1. Run a BFS on the graph start from *s*, if adjacent edge's residual capacity is larger than 0 and the target vertex of this edge is not visited, than put this vertex in the queue, mark this vertex as visited and store this edge in edgeTo\[vertex\].
       2. if *t* is marked after the BFS, than there is a augmenting path available. Otherwise, than no.
     3. If there is a augmenting path available, than visiting the path along with the edgeTo\[*t*\] back to *s*, find the bottle value (max value) can be augmented to the flow.
     4. Visiting the augmenting path again and augment the bottle value on each edges.
@@ -122,11 +132,3 @@ Here is the link for this [Book](http://algs4.cs.princeton.edu/).
 
       Just run a graph search(BFS, DFS) starting from *s*, and collect all the vertices that the edge toward them when this edge with no full forward or empty backward flow. Than the collection is a Mincut of this Maxflow Graph.
 
-### String
-
-#### Key-Indexed Counting
-  
-  + 
-
-  LSD String Sorting (Least-Significant-digit-first String Sort)
-  
