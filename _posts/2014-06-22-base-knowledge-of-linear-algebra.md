@@ -1,9 +1,9 @@
 ---
 layout: post
 ---
-## Matrix
+### Matrix
 
-+ Operation
+#### Operation
 
   + Addition and Subtraction
 
@@ -37,12 +37,13 @@ layout: post
 
   + Matrix Inverse
 
-    If *A* is an m x m matrix, and if it has an inverse, than A x A(-1) = A(-1) x A = I. //TODO change (-1) to superscript.
+    If *A* is an m x m matrix, and if it has an inverse, than A x A<sup>(-1)</sup> = A<sup>(-1)</sup> x A = I.
 
   + Matrix Transpose
 
-    Let *A* be an m x n martrix, and let *B* = *A*(T). Then *B* is an n x m matrix, and *B*(ij) = *A*(ji). //TODO change (T) to superscript and (ij) to subscript.
+    Let *A* be an m x n martrix, and let *B* = *A*<sup>(T)</sup>. Then *B* is an n x m matrix, and *B*<sub>(ij)</sub> = *A*<sub>(ji)<sub>.
 
 ### Vector
 
   Vector is a matrix with only on column.
+

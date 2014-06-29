@@ -94,12 +94,12 @@ Here is the link for this [Book](http://algs4.cs.princeton.edu/).
     2. Visit all the vertices sequently and "Relex" all the edges that source from the vertex being visiting.
     3. Repeat *V* times for the step 2.
 
-```java
+~~~java
     for (int i=0; i < G.V(); i++) 
         for (int v=0; v < G.V(); v++)
             for (DirectedEdge e : G.adj(v))
                 relex(e);
-```
+~~~
 
 #### Maxflow and Mincut Problem
 
