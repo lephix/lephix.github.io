@@ -19,6 +19,9 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
 
+    <!-- Font style -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700" rel="stylesheet" type="text/css">
+
     <!-- Custom styles for this template -->
     <link href="{{ site.url }}/css/blog.css" rel="stylesheet">
 
@@ -58,7 +61,7 @@
           <div class="blog-post">
             <h2 class="blog-post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
             <p class="blog-post-meta">by Lephix - {{ post.date | date: "%Y-%m-%d" }}</p>
-            <p class="blog-excerpt">{{ post.content | strip_html |  truncatewords: 50}}</p>
+            <!--<p class="blog-excerpt">{{ post.excerpt | strip_html |  truncatewords: 50}}</p>-->
           </div>
           {% endfor %}
           <!-- /.blog-post -->

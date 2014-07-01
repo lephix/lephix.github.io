@@ -3,8 +3,15 @@
  */
 
 body {
-  font-family: Arial,sans-serif;
+  font-family: "Lato","proxima-nova","Helvetica Neue",Arial,sans-serif;
   color: #555;
+}
+
+p {
+  line-height: 24px;
+  margin: 0;
+  font-size: 16px;
+  margin-bottom: 10px;
 }
 
 h1, .h1,
@@ -14,7 +21,7 @@ h4, .h4,
 h5, .h5,
 h6, .h6 {
   margin-top: 0px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Roboto Slab","ff-tisa-web-pro","Georgia",Arial,sans-serif;
   font-weight: normal;
   color: #333;
 }
@@ -146,7 +153,7 @@ h6, .h6 {
  */
 
 .blog-post {
-  margin-bottom: 60px;
+  margin-bottom: 10px;
 }
 .blog-post-title {
   margin-bottom: 5px;

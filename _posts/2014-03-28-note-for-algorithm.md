@@ -1,8 +1,8 @@
 ---
 layout: post
 ---
-
 This post is the note for the algorithm course on [Coursera](http://www.coursera.com).
+
 
 Here is the link for this [Book](http://algs4.cs.princeton.edu/).
 
