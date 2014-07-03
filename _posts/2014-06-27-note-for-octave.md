@@ -354,7 +354,7 @@ octave:99> imagesc(magic(11)) % magic will return a magic matrix, and this can s
 ~~~
 
 ### Control statement: for , while, if
-~~~matlat
+~~~matlab
 octave:7> v = zeros(10,1)
 v =
 
@@ -434,7 +434,33 @@ ans =  4
 
 ### Vectorization
 
+Vectorization will make the computation more efficient.
+
+For example, we have following vectors.
 <div>
-`h_Theta(x) = sum_(j=0)^n Theta_j x_j = Theta^T x`
+`u = [u1,u2,u3] , v = [v1,v2,v3] , w = [w1,w2,w3]`
+</div>
+Here is the implementation using iteration
+
+~~~matlab
+for j = 1:3,
+  u(j) = 2 * v(j) + 5 w(j);
+end
+~~~
+
+We can simplify it to do it as following
+
+~~~matlab
+u = 2 * v + 5 * w
+~~~
+
+
+<div>
+Here is another example, If `Theta = [[Theta1],[Theta2],[Theta3]], x = [[x1],[x2],[x3]],
+h_Theta(x) = sum_(j=0)^n Theta_j x_j`
+</div>
+After vertorization
+<div>
+`h_Theta(x) = Theta^T x`
 </div>
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML-full"></script>
