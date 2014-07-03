@@ -202,6 +202,8 @@ octave:2> disp(e)
 octave:3> disp(sprintf('2 decimals: %0.2f', e))
 2 decimals: 3.14
 octave:12> hist(A) % display a histogram graphic for the matrix A
+octave:2> PS1('>> ') % Change the prompt for the command line
+>> 
 ~~~
 
 ### Data Save/Load
@@ -319,3 +321,120 @@ ans =
    1.3323e-15   1.0000e+00
 
 ~~~
+
+
+### Plotting Data
+~~~matlab
+octave:15> x = [0:0.01:1]
+octave:16> y1 = sin(4*pi*x)
+octave:17> plot(x, y1) % we can see a graph with a sin(x) from 0 to 4pi
+octave:18> y2 = cos(4*pi*x)
+octave:19> plot(x, y2) % we can see a new graph with a cos(x) from 0 to 4pi
+octave:20> hold on % this command will not clean the graph if a new graph is going to plot
+octave:21> plot(x, y1, 'r') % there is a graph has the mixed sin(x) and cos(x) graph together will be shown. and the sin(x) will be drawn in red color.
+octave:35> xlabel('time')
+octave:36> ylabel('value')
+octave:37> legend('sin', 'cos')
+octave:38> title('my plot')
+octave:40> print -dpng 'test.png' % output the graph to png format
+octave:241 close % close the graph
+octave:46> figure(1)
+octave:47> plot(x, y1)
+octave:48> figure(2)
+octave:49> plot(x, y2)
+octave:55> subplot(1,2,1) % divide plot to a 1x2 grid, and access the first element
+octave:56> plot(x, y1)
+octave:57> subplot(1,2,2) % access the second element
+octave:58> plot(x, y2)
+octave:60> axis([0.5, 1, -1, 1]) % change axis to x [0.5 to 1], y [-1 to 1]
+octave:76> imagesc(rand(8:8))
+octave:78> imagesc(rand(8:8)), colorbar, colormap gray % draw a colorbar and change the colormap to gray
+octave:87> colormap default % change back to the normal colormap
+octave:99> imagesc(magic(11)) % magic will return a magic matrix, and this can show the relationship between each element.
+~~~
+
+### Control statement: for , while, if
+~~~matlat
+octave:7> v = zeros(10,1)
+v =
+
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+
+octave:8> for i=1:10
+> v(i) = 2^i;
+> end
+octave:9> v
+v =
+
+      2
+      4
+      8
+     16
+     32
+     64
+    128
+    256
+    512
+   1024
+octave:12> i=1
+i =  1
+octave:13> while i<=5,
+> v(i)=100,
+> i=i+1,
+> end;
+octave:14> v
+v =
+
+    100
+    100
+    100
+    100
+    100
+     64
+    128
+    256
+    512
+   1024
+octave:16> if i==1,
+> disp(1);
+> elseif i==2,
+> disp(2);
+> else,
+> disp(3)
+> end;
+ 1
+~~~
+
+### Custom function
+
+We can create a plain text file with name `test1.m`. Following is the content.
+
+~~~matlab
+function y = test1(x)
+  y = x^2;
+~~~
+
+Than `cd` to the path of `test1.m`, and run the function.
+
+
+~~~matlab
+octave:1> test1(2)
+y =  4
+ans =  4
+~~~
+
+### Vectorization
+
+<div>
+`h_Theta(x) = sum_(j=0)^n Theta_j x_j = Theta^T x`
+</div>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML-full"></script>
