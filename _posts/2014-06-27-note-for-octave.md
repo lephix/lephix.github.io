@@ -456,11 +456,11 @@ u = 2 * v + 5 * w
 
 
 <div>
-Here is another example, If `Theta = [[Theta1],[Theta2],[Theta3]], x = [[x1],[x2],[x3]],
-h_Theta(x) = sum_(j=0)^n Theta_j x_j`
+Here is another example, If `theta = [[theta1],[theta2],[theta3]], x = [[x1],[x2],[x3]],
+h_theta(x) = sum_(j=0)^n theta_j x_j`
 </div>
 After vertorization
 <div>
-`h_Theta(x) = Theta^T x`
+`h_theta(x) = theta^T x`
 </div>
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML-full"></script>
