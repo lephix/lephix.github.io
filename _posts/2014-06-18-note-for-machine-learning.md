@@ -49,6 +49,8 @@ One way to minimize the cost function is using gradiant descent algorithm. In ba
     
   Predict **Discrete-Value** output
 
+#### Logistic Regression
+
 
 
 ## Unsupervisor Learning
