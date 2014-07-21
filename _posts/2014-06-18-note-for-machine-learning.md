@@ -4,7 +4,7 @@ title: Note for machine learning course from Stanford on Coursera
 ---
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML-full"></script>
 
-## Supervisor Learning
+## Supervised Learning
 
   Given the "right answer" for each example in the data
 
@@ -60,12 +60,72 @@ Normal Equation:
 
 ### Classification
     
-  Predict **Discrete-Value** output
+Predict **Discrete-Value** output
 
 #### Logistic Regression
 
+Logistic regression hypothesis is defined as: \`h_theta(x) = g(theta^T x)\`, and want \` 0 <= h_theta(x) <= 1\`, so we have function \`g\` a sigmoid function. the sigmoid function is defined as: \`g(z) = 1 / (1 + e^(-z))\`.
+
+Then \`h_theta(x)\` looks like this: \` h_theta(x) = 1 / (1 + e^(-theta^T x))\`.
+
+The output of \`h_theta(x)\` means the probability that \`y = 1\` on input \`x\`. For example, \`h_theta(x) = 0.7\` means this \`x\` has 70% chance to be classified to \`y = 1\`, has 30% chance to be classified to \`y = 0\`.
+
+Defined cost function as the same as Linear Regression with a slight different way: \`J(theta) = 1/m sum_(i=1)^m 1/2 (h_theta(x^(i)) - y^(i))^2\`. 
+
+Defined \`Cost(h_theta(x), y) = 1/2 (h_theta(x) -y)^2\`. Because \`h_theta(x) = 1 / (1 + e^(-theta^T x))\` will cause the **non-convex** problem, so we change it like this: \`Cost(h_theta(x), y) = {(-log(h_theta(x)) if y = 1) , (-log(1 - h_theta(x)) if y = 0):}\`.
+
+Finally, we have our cost function like this: 
+
+\` J(theta) = 1/m sum_(i=1)^m Cost(h_theta(x^((i))), y^((i))) \`
+
+We can translate it to this:
+
+\`J(theta) = - 1/m [ sum_(i=1)^m y^((i)) log h_theta(x^((i))) + (1-y^((i))) log(1-h_theta(x^((i)))) ] \`
+
+#### Gradient Descent
+
+Want to \`min_theta J(theta)\`, then repeat \`{ theta_j := theta_j - alpha d/(d theta_j) J(theta) = theta_j - alpha sum_(i=1)^m ( h_theta(x^((i)) - y^((i)) ))x_j^((i))}\`.
+
+Although this is looks the same as linear regression, but \`h_theta(x) = 1/(1+e^(-theta^T x))\` is not the same as linear regression.
+
+#### One vs All
+
+Train a logistic regression classifier \`h_theta^((i)) (x)\` for each class \`i\` to predict the probability that \`y = i\`.
+
+On a new input \`x\`, to make a prediction, pick the class \`i\` that maximizes \`max_i h_theta^((i)) (x)\`.
+
+#### Regularization
+
+First we will talk about overfitting, after that we will have our regularization cost function.
+
+#### Overfitting
+
+If we have too may features, the learned hypothesis may fit the training set very well(\`J(theta) = 1/(2m) sum_(i=1)^m ( h_theta ( x^((i)) ) - y^((i)) )^2\`), but fail to generalize to new examples (predict prices on new examples.)
+
+Fixing overfitting:
+
+1.Reduce number of features
+
++ Manually select which features to keep
++ Model selection algorithm
+
+2.Regularization
+
++ keep all the features, but reduce magnitude/values of parameters \`theta_j\`.
++ Works well when we have a lot of features, each of which contributes a bit to predicting \`y\`.
+
+#### Regularization
+
+Add a regularization parameter at the end of cost function like following, will reduce the \`theta\`'s affection.
+<p>
+`J(theta) = 1/(2 m) [ sum_(i=1)^m ( h_theta(x^((i))) - y^((i)) )^2 + lambda sum_(j=1)^n theta_j^2 ]`
+</p>
+
+Notice: By convention, we don't include \`theta_0\` in the regularization parameter.
+
+If \`lambda\` is too small, then it will be no affection for the regularization parameter, but if it too big, will cause underfitting.
 
 
-## Unsupervisor Learning
+## Unsupervised Learning
 
 ### Cluster
