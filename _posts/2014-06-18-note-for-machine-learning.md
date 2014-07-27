@@ -125,6 +125,33 @@ Notice: By convention, we don't include \`theta_0\` in the regularization parame
 
 If \`lambda\` is too small, then it will be no affection for the regularization parameter, but if it too big, will cause underfitting.
 
+### Neuron Network
+
+#### Model Representation
+
+\`a_i^((j)) \` = "activation" of unit \`i\` in layer \`j\`.
+
+\`Theta^((j))\` = matrix of weights controlling function mapping from layer \`j\` to layer \`j + 1\`.
+
+\`a_1^((2)) = g(Theta_10^((1)) x_0 + Theta_11^((1)) x_1 + Theta_12^((1)) x_2 + Theta_13^((1)) x_3)\`
+
+\`a_2^((2)) = g(Theta_20^((1)) x_0 + Theta_21^((1)) x_1 + Theta_22^((1)) x_2 + Theta_23^((1)) x_3)\`
+
+\`a_3^((2)) = g(Theta_30^((1)) x_0 + Theta_31^((1)) x_1 + Theta_32^((1)) x_2 + Theta_33^((1)) x_3)\`
+
+\`h_Theta(x) = a_1^((3)) = g( Theta_10^((2)) a_0^((2)) + Theta_11^((2)) a_1^((2)) + Theta_12^((2)) a_2^((2)) + Theta_13^((2)) a_3^((2) ) )\`
+
+If network has \`s_j\` units in layer \` j \`, and \`s_(j+1)\` units in layer \`j + 1\`, then \`Theta^((j))\` will be of dimension \`s_(j+1) xx (s_j + 1)\`.
+
+#### Forward propagation: Vectorized implementation
+
+According to the last example, we have a \`x = [(x_0),(x_1),(x_2),(x_3)]\`, and \`z^((2)) = [(z_1^((2))),(z_2^((2))),(z_3^((2)))]\`.
+
+\`z^((2)) = Theta^((1)) a^((1))\`
+
+\`a^((2)) = g(z^((2)))\`
+
+Add \`a_0^((2)) = 1\`. then, \`z^((3)) = Theta^((2)) a^((2))\`. and, \`h_Theta(x) = a^((3)) = g(z^((3)))\`.
 
 ## Unsupervised Learning
 
