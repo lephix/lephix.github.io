@@ -125,7 +125,7 @@ Notice: By convention, we don't include \`theta_0\` in the regularization parame
 
 If \`lambda\` is too small, then it will be no affection for the regularization parameter, but if it too big, will cause underfitting.
 
-### Neuron Network
+### Neural Network
 
 #### Model Representation
 
@@ -141,7 +141,7 @@ If \`lambda\` is too small, then it will be no affection for the regularization 
 
 \`h_Theta(x) = a_1^((3)) = g( Theta_10^((2)) a_0^((2)) + Theta_11^((2)) a_1^((2)) + Theta_12^((2)) a_2^((2)) + Theta_13^((2)) a_3^((2) ) )\`
 
-If network has \`s_j\` units in layer \` j \`, and \`s_(j+1)\` units in layer \`j + 1\`, then \`Theta^((j))\` will be of dimension \`s_(j+1) xx (s_j + 1)\`.
+If network has \`s_j\` units in layer \` j \`, and \`s _ (j+1)\` units in layer \`j + 1\`, then \`Theta^((j))\` will be of dimension \`s_(j+1) xx (s_j + 1)\`.
 
 #### Forward propagation: Vectorized implementation
 
@@ -152,6 +152,10 @@ According to the last example, we have a \`x = [(x_0),(x_1),(x_2),(x_3)]\`, and 
 \`a^((2)) = g(z^((2)))\`
 
 Add \`a_0^((2)) = 1\`. then, \`z^((3)) = Theta^((2)) a^((2))\`. and, \`h_Theta(x) = a^((3)) = g(z^((3)))\`.
+
+#### Cost Function
+
+\` J(Theta) = - 1/m [ sum _(i=1)^m sum _(k=1)^K y _k^((i)) log ( h_Theta( x^((i)) ))_k + ( 1 - y_k^((i)) ) log (1 - (h_Theta( x^((i)) ))_k)] + lambda / 2m sum _(l=1)^(L-1) sum _(i=1)^(S _l) sum _(j=1)^(S _(l+1)) (Theta _(ji)^((l))) ^2\`
 
 ## Unsupervised Learning
 
