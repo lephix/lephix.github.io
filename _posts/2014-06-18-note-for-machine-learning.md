@@ -157,6 +157,91 @@ Add \`a_0^((2)) = 1\`. then, \`z^((3)) = Theta^((2)) a^((2))\`. and, \`h_Theta(x
 
 \` J(Theta) = - 1/m [ sum _(i=1)^m sum _(k=1)^K y _k^((i)) log ( h_Theta( x^((i)) ))_k + ( 1 - y_k^((i)) ) log (1 - (h_Theta( x^((i)) ))_k)] + lambda / 2m sum _(l=1)^(L-1) sum _(i=1)^(S _l) sum _(j=1)^(S _(l+1)) (Theta _(ji)^((l))) ^2\`
 
+#### Backward Propagation
+
+Backward propagation algorithm is for minimizing the Cost function of Neural Network.
+
+1. Traning set\`{(x^((1)), y^((1))), ... , (X^((m)),y^((m)))}\`
+2. Set \`Delta _ij^((l)) = 0\` (for all l,i,j).
+3. For \` i = 1\` to \`m\`
+  : Set \`a^((1)) = x^((i))\`
+  : Perform forward propagation to compute \`a^((l))\` for \`l = 2,3,...,L\`
+  : Using \`y^((i))\`, compute \`delta^((L)) = a^((L)) - y^((i))\`
+  : Compute \` delta^((L-1)), delta^((L-2)),...,delta^((2))\`. No \`delta^((1))\`.
+  :\`Delta _(ij)^((l)) := Delta _(ij)^((l))+ a_j^((l)) delta _i^((l+1))\`
+
+4. Compute following
+  : \`D _(ij)^((l)) := 1/m Delta _(ij)^((l)) + lambda Theta _(ij)^((l))\` if \` j != 0\`
+  : \`D _(ij)^((l)) := 1/m Delta _(ij)^((l))\` if \` j = 0\`
+
+Following shows how to compute \`delta\` for each layer.
+
+\` delta_j^((4)) = a_j^((4)) - y_i \`
+
+\` delta^((3)) = (Theta^((3)))^T delta^((4)) .** g' (z^((3)))\`
+
+\` delta^((2)) = (Theta^((2)))^T delta^((3)) .** g' (z^((2)))\`
+
+#### Training a neural network
+
+1. Randomly initialize weights
+2. Implement forward propagation to get \`h_Theta(x^((i)))\` for any \`x^((i))\`
+3. Implement code to compute cost function \`j(Theta)\`
+4. Implement back propagation to compute partial derivatives \`del/(del Theta _(jk)^((l))) J(Theta)\`
+  : for i=1:m
+    : perform forward propagation and back propagation using example \`(x^((i)), y^((i)))\`
+    : (Get activations \`a^((l))\` and delta terms \`delta^((l))\` for \`l=2,...,L\`).
+5. Use gradient checking to compare \`del/(del Theta _(jk)^((l))) J(Theta)\` computed using back propagation vs. using numeral estimate of gradient of \`J(Theta)\`. Then disable gradient checking code.
+6. Use gradient descent or advanced optimization method with back propagation to try to minimize \`J(Theta)\` as a function of parameters \`Theta\`
+
+### Evaluation Machine Learning
+
+High Bias 
+  : Means under-fitting. More training data is not helpful. Add more features or reduce \`lambda\` could fix it.
+
+High Variance
+  : Means over-fitting. Training with more data is helpful, and increase \`lambda\` and reduce features could fix it.
+
+#### Evaluating a hypothesis
+
+Typically, we can divide data into 3 parts. Training data (60%), cross validation data (20%) and test data (20%). We use cross validation data to evaluate all the hypothesis, and to choose a best hypothesis. 
+
+#### Error metrics
+
+\`Precise = (Actual True)/(Actual True + Fake True)\`
+
+\`Recall = (Actual True)/(Actual True + Fake False)\`
+  : Fake True: The actual is false, prediction is true.
+  : Fake False: The actual is true, prediction is false.
+
+#### Trading off Precision and recall
+
+\`0 <= h_theta(x) <= 1 \`, predict 1 if \`h_theta(x)>=0.5\`, and predict 0 if \`h_theta(x)<0.5\`. So 0.5 is the threshold.
+
+If we increase threshold, than we will get a higher precision and a lower recall.
+
+If we decrease threshold, than we will get a higher recall and a lower precision.
+
+\`F_1 text(Score) = 2 (Precision ** Recall)/(Precision + Recall)\`, Higher \`F_1 text(Score)\` indicate better choice of the threshold.
+
+### Support Vector Machine
+
+SVM Hypothesis is like following.
+
+\` min _theta C sum _(i=1)^m [ y^((i)) text(cost) _1 (theta^T x^((i))) + (1 - y^((i))) text(cost) _0 (theta^T x^((i)))] + 1/2 sum _(j=1)^n theta _j^2\`
+
+#### Logistic regression vs. SVMs
+
+n = number of features, m = number of training examples
+
+If n is large , use logistic regression , or SVM without a kernel ("linear kernel").
+
+If n is small, m is intermediate, use SVM with Gaussian kernel.
+
+If n is small, m is large, than add more features and use logistic regression or SVM without a kernel.
+
+Neural network likely to work well for most of these settings, but may be slower to train.
+
 ## Unsupervised Learning
 
 ### Cluster
