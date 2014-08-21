@@ -13,7 +13,9 @@ Try redis with your web browser [try.redis.io](http://try.redis.io)
 
 **Redis cannot use these types recursively.**
 
-## String
+## Data types
+
+### String
 
 A basic type for redis. 
 
@@ -44,7 +46,7 @@ OK
 4) "30"
 ```
 
-## Lists
+### Lists
 
 Lists is implemented with a bidirection links. So it is very fast to get a item at the end of both side. 
 
@@ -62,7 +64,7 @@ Lists is implemented with a bidirection links. So it is very fast to get a item 
 3) "third"
 ```
 
-## Sets
+### Sets
 
 Sets is implemented with a no-value Hashes. No identical items exist in Sets. SDIFF, SINTER, SUNION can be used for set operation.
 
@@ -82,7 +84,7 @@ Sets is implemented with a no-value Hashes. No identical items exist in Sets. SD
 2
 ```
 
-## Sorted Sets
+### Sorted Sets
 
 Sorted Sets is implemented by skip list. The element's score is supportting integer, double and (+inf means + infinity, -inf means - infinity). So the time complexity is O(log(N)).
 
@@ -111,3 +113,24 @@ Sorted Sets is implemented by skip list. The element's score is supportting inte
 1
 ```
 
+## Transaction
+
+Use command ```MULTI``` to start a transaction, and use command ```EXEC``` to execute all the queued commands in the transaction. If one of command have a runtime error (like mismatching the command with the type of the key), other command will still be executed. There is no Roll-Back feature in Redis.
+
+```bash
+> set a 1
+OK
+> set b 2
+OK
+> multi
+OK
+> set a 2
+QUEUED
+> hset b name 1
+QUEUED
+> exec
+1) OK
+2) WRONGTYPE Operation against a key holding the wrong kind of value
+> get a
+"2"
+```
