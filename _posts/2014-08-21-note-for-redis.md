@@ -47,7 +47,7 @@ Bit operation is also supported.
 1
 ~~~
 
-## Hashes
+### Hashes
 
 This type can contain number of fields for a object. 
 
@@ -207,3 +207,83 @@ This command can monitor at multiple keys. `BRPOP key1 key2 0`. key1 will be che
 
 Client could publish message to channel, and subscribe channel for receiving messages. If in the subscribe mode, client could only execute `subscribe, unsubscribe, psubscribe, punsubscribe` commands. p means pattern. Only when no more channel subscribed, client will be out of the subscribe mode.
 
+### Internal storage
+
+Every value in Redis is a redisObject.
+
+~~~C
+typedef struct redisObject {
+	unsigned type:4;
+	unsigned notused:2; /* Not Used */
+	unsigned encoding:4;
+	unsigned lru:22; /* lru time (relative to server.lruclock) */
+	int refcount;
+	void *ptr;
+} robj;
+~~~
+
+type and encoding could be one of following.
+
+~~~C
+/* type value */
+#define REDIS_STRING 0
+#define REDIS_LIST 1
+#define REDIS_SET 2
+#define REDIS_ZSET 3
+#define REDIS_HASH 4
+
+/* encoding value */
+#define REDIS_ENCODING_RAW 0
+#define REDIS_ENCODING_INT 1
+#define REDIS_ENCODING_HT 2
+#define REDIS_ENCODING_ZIPMAP 3
+#define REDIS_ENCODING_LINKEDLIST 4
+#define REDIS_ENCODING_ZIPLIST 5
+#define REDIS_ENCODING_INTSET 6
+#define REDIS_ENCODING_SKIPLIST 7
+~~~
+
+#### String
+
+Redis use sdshdr for storing a String value if the value of the string . `ptr` in redisObject point to the address of it.
+
+~~~C
+struct sdshdr {
+	int len; /* length of the string */
+	int free; /* free space in buff */
+	char buff[];
+}
+~~~
+
+During the startup, Redis will create 10000 redisObjects that represent values from 0 to 9999 as shared redisObjects. This optimization could be used for everywhere that use redisObject.If the value of the string is between 0 - 9999, key will point to the shared redisObjects instead of create a new one.
+
+If `maxmemory` is set in configuration file, no shared redisObjects will be used. Because each value need the LRU information.
+
+#### Hashes
+
+REDIS_ENCODING_HT or REDIS_ENCODING_ZIPLIST will be used for Hashes, it depends on the following configurations. If the amount of fields less than `hash-max-ziplist-entries` and all the fields name length and fields value length are less than `hash-max-ziplist-value`, ZIPLIST will be used, otherwise HT will be used.
+
+~~~properties
+hash-max-ziplist-entries 512 
+hash-max-ziplist-value 64 /* bytes */
+~~~
+
+ZIPLIST use a compact data struct for saving data space extremely. However, it will sacrifice the search speed, rearrange the data when data changes. so those two properties' value must be small.
+
+#### Lists
+
+Redis will use REDIS_ENCODING_INTSET instead of REDIS_ENCODING_HT when all the values in Lists is a Integer and the amount of values is less than `set-max-intset-entries` in configuration file. If the condition is not fulfilled, Redis will change to use REDIS_ENCODIING_HT, and will not change back cause the high performance of monitoring. `intset` stores data in numeric order, so it has high performance in searching, but low performance in manipulating. Following is the `intset` definition.
+
+~~~C
+typedef struct intset {
+	uint32_t encoding;
+	uint32_t length;
+	int8_t contents[];
+} intset;
+~~~
+
+#### Sorted Sets
+
+Sorted Sets use REDIS_ENCODING_ZIPLIST or REDIS_ENCODING_SKIPLIST as internal storage. The condition for the transition is as the same as Hashes.
+
+If Redis using REDIS_ENCODING_SKIPLIST, Hashes will be used for storing the mapping relationship between elements value and elements score, So `ZSCORE` could be applied within O(1). And use SkipList for storing element score and the mapping to element value. Redis changed some default SkipList behavior, allow same score element, adding a pointer to point previous element. Element value is stored as a RedisObject, so shared RedisObject could be helpful. Element score is stored as double.
