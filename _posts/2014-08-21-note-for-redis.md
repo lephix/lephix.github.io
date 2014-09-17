@@ -287,3 +287,60 @@ typedef struct intset {
 Sorted Sets use REDIS_ENCODING_ZIPLIST or REDIS_ENCODING_SKIPLIST as internal storage. The condition for the transition is as the same as Hashes.
 
 If Redis using REDIS_ENCODING_SKIPLIST, Hashes will be used for storing the mapping relationship between elements value and elements score, So `ZSCORE` could be applied within O(1). And use SkipList for storing element score and the mapping to element value. Redis changed some default SkipList behavior, allow same score element, adding a pointer to point previous element. Element value is stored as a RedisObject, so shared RedisObject could be helpful. Element score is stored as double.
+
+
+## Script
+
+### Description
+
+Redis provide support for Lua script after 2.6. There are some advantages for script.
+
+1. Reduce the network overhead. Only one command will be send to Redis.
+2. Atomic operation. Redis will take the script as a atomic operation, no need to take care of the concurrency.
+3. Reused for all the client. Because script is stored in Redis server, so all the client could leverage this script.
+
+### Practice
+
+Following is a script named "ratelimiting.lua".
+
+~~~Lua
+local time=redis.call('incr', KEYS[1])
+if times==1 then  -- kyes[1] just created, so set the expiration for it.
+redis.call('expire', KEYS[1], ARGV[1])
+end
+
+if times > tonumber(ARGV[2]) then
+return 0
+end
+
+return 1
+~~~
+
+We could use this script with following command.
+
+~~~bash
+$redis-cli --eval /path/to/ratelimiting.lua rate.limiting:127.0.0.1 , 10 3
+~~~
+
+## Management
+
+### Backup
+
+#### RDB
+
+RDB is the default way to persist the data in memory. RDB will be trigger by scheduler or manually. `SAVE` and `BGSAVE` are the commands for persisting memory. `SAVE` will use main process to persist data, `BGSAVE` will fork a new process to persist data. 
+
+Following is the configuration for auto persisting data.
+
+~~~
+save 900 1 # means if more than 1 key is changed in 900 seconds (15 minutes), will trigger the persist operation.
+save 300 10
+~~~
+
+1. RDB will use `fork()` to create new process for persisting data in memory. 
+2. Parent process will continue to serve clients. Child process will write memory data into a temporary RDB file. (When doing the `fork` in Unix or Linux System, **copy-on-write** strategy will be used. **copy-on-write** means parent and child process share memory, but when parent child do a write operation, system will copy this piece of memory instead of change it directly in the share memory. So this strategy could protect child process from suffering memory inconsistent situation.)
+3. After child process finishing the writing operation, new RDB file will replace the old one.
+
+If Redis quit accidentally, data changes after the last backup will get lost.
+
+#### AOF
