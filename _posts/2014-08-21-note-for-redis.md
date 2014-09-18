@@ -344,3 +344,37 @@ save 300 10
 If Redis quit accidentally, data changes after the last backup will get lost.
 
 #### AOF
+
+AOF (append only file) is another way to persist memory to disk. It is disabled by default. Change to `appendonly yes` to enable it. If AOF is enabled, every command sent to Redis for changing data will appended to AOF file. The command will be written to the system cache instead of the disk.
+
+AOF file will contain lots of redundant command. So rewrite AOF file is needed. Following is the configuration for rewriting. `BGREWRITEAOF` could run rewrite manually.
+
+~~~properties
+auto-aof-rewrite-percentage 100 # The size percentage of the last aof file, if exceed this percentage, rewrite will be triggered.
+auto-aof-rewrite-min-size 64mb # The minimize size of the aof file in current status, if exceed this size, rewrite will be triggered.
+~~~
+
+There is another configuration for the synchronization between system cache and disk.
+
+~~~properties
+#appendfsync always # means sync every time.
+appendfsync everysec # means sync every second.
+#appendfsync no # means sync depend on system, default is 30 seconds.
+~~~
+
+Redis support enabling RDB and AOF, and will use AOF for restoring data because less data could be lost.
+
+### Cluster
+
+#### Master and slaves
+
+It's very easy to set slaves for a Redis server. Just set `slaveof MASTER-IP MASTER-PORT` in slaves configuration and run it. Slaves node is read-only by default. Set `slave-read-only no` in configuration file will enable client to update data in this specific slave Redis server (won't sync to other servers), but the data will be overwritten by master Redis server during synchronization. 
+~~~
+> SLAVEOF 127.0.0.1 6379 # could make this redis server as a slave server. If is was a slave for another master, will discard dataset.
+> SLAVEOF NO ONE # make this redis server as a master server. This won't discard dataset.
+~~~
+
+#### Principle
+
+When a slave server started, will send `SYNC` command to master server. Master server will take a snapshot of current dataset (The same as taking a RDB save), new data changes will be cached. Master will send the snapshot and cache to slave server.
+
