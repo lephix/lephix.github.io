@@ -369,6 +369,7 @@ Redis support enabling RDB and AOF, and will use AOF for restoring data because 
 #### Master and slaves
 
 It's very easy to set slaves for a Redis server. Just set `slaveof MASTER-IP MASTER-PORT` in slaves configuration and run it. Slaves node is read-only by default. Set `slave-read-only no` in configuration file will enable client to update data in this specific slave Redis server (won't sync to other servers), but the data will be overwritten by master Redis server during synchronization. 
+
 ~~~
 > SLAVEOF 127.0.0.1 6379 # could make this redis server as a slave server. If is was a slave for another master, will discard dataset.
 > SLAVEOF NO ONE # make this redis server as a master server. This won't discard dataset.

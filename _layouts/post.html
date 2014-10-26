@@ -20,7 +20,10 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/styles/googlecode.min.css">
     
     <!-- Font style -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700" rel="stylesheet" type="text/css">
+    <!--<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700" rel="stylesheet" type="text/css">-->
+    <!-- use 360 CDN -->
+    <link href="http://fonts.useso.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700" rel="stylesheet" type="text/css">
+
 
     <!-- Custom styles for this template -->
     <link href="{{ site.url }}/css/blog.css" rel="stylesheet">
@@ -58,7 +61,7 @@
         <div class="col-md-9 blog-main">
 
           <div class="page-post">
-            <h2 class="page-post-title">{{ page.title }}</h2>
+            <h1 class="page-post-title">{{ page.title }}</h1>
             <p class="page-post-meta">Posted on {{ page.date | date: "%Y-%m-%d" }} - by Lephix</p>
             {{ content }}            
           </div><!-- /.blog-post -->
