@@ -23,3 +23,10 @@ export M2_HOME=
 ~~~bash
 sudo apachectl -k start|stop|restart
 ~~~
+
+### Mysql
+Mysql will be installed at `/usr/local/mysql` through `.DMG` file.
+
+~~~bash
+sudo /usr/local/mysql/bin/mysqld_safe
+~~~
