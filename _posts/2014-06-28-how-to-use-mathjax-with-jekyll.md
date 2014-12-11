@@ -1,13 +1,14 @@
 ---
 layout: post
 title: How to use MathJax with Jekyll
+includeMathJax: true
 ---
 
 #### 1. Import appropriate MathJax library in your page
 
 Best way of importing MathJax library is using CDN links.
 
-For example, if using TeX/LaTeX or MathML should import following code in your page.
+For example, if using TeX/LaTeX or MathML, should import following code in your page.
 
 ~~~html
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -18,7 +19,25 @@ If using AsciiMath, import following code.
 ~~~
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML-full"></script>
 ~~~
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML-full"></script>
+
+> Tips:  
+> You can using a custom variable in Front Matter when using Jekyll like following.
+> 
+> ~~~
+> ---
+>layout: post
+>title: How to use MathJax with Jekyll
+>includeMathJax: true
+>---
+> ~~~
+> 
+> And adding following codes in layout template.
+> 
+> ~~~
+> {% raw %}{% if page.includeMathJax == true %}
+>    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML-full"></script>
+> {% endif %}{% endraw %}
+> ~~~
 
 #### 2. Use `<span>` or `<div>` for escaping markdown interpreter
   
