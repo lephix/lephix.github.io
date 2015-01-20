@@ -1,6 +1,6 @@
 ---
 layout: post
-   title: Tomcat tricks and debugging with JRebel
+title: Tomcat tricks and debugging with JRebel
 ---
 
 ### Tomcat Tricks
