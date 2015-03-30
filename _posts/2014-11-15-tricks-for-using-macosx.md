@@ -49,3 +49,11 @@ Mysql will be installed at `/usr/local/mysql` through `.DMG` file. Find Mysql co
 ~~~bash
 sudo /usr/local/mysql/bin/mysqld_safe
 ~~~
+
+### Finder
+Display full path on the top of the Finder window or cancel this function.
+
+~~~bash
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool TRUE; killall Finder
+defaults delete com.apple.finder _FXShowPosixPathInTitle; killall Finder
+~~
