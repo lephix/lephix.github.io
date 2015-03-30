@@ -56,4 +56,4 @@ Display full path on the top of the Finder window or cancel this function.
 ~~~bash
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool TRUE; killall Finder
 defaults delete com.apple.finder _FXShowPosixPathInTitle; killall Finder
-~~
+~~~
