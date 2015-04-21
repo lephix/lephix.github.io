@@ -10,4 +10,4 @@ title: Useful links and stuffs
 + Chinese version of Swift document. [link](http://numbbbbb.gitbooks.io/-the-swift-programming-language-/content/chapter1/02_a_swift_tour.html)
 
 ## Stuffs
-+ Netbeans Configuration. [Download](download/NetbeansConfiguration2014-10-25.zip). Can only import hotkeys.
+
