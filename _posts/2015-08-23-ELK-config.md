@@ -30,7 +30,6 @@ Following is the configuration for ElasticSearch's template. Run `curl -XPOST ht
           "message_field": {
             "mapping": {
               "index": "not_analyzed",
-              "omit_norms": true,
               "type": "string",
               "doc_values": true
             },
@@ -42,11 +41,43 @@ Following is the configuration for ElasticSearch's template. Run `curl -XPOST ht
           "string_fields": {
             "mapping": {
               "index": "not_analyzed",
-              "omit_norms": true,
               "type": "string",
               "doc_values": true
             },
             "match_mapping_type": "string",
+            "match": "*"
+          }
+        },
+        {
+          "long_fields": {
+            "mapping": {
+              "index": "not_analyzed",
+              "type": "long",
+              "doc_values": true
+            },
+            "match_mapping_type": "long",
+            "match": "*"
+          }
+        },
+        {
+          "double_fields": {
+            "mapping": {
+              "index": "not_analyzed",
+              "type": "double",
+              "doc_values": true
+            },
+            "match_mapping_type": "double",
+            "match": "*"
+          }
+        },
+        {
+          "object_fields": {
+            "mapping": {
+              "index": "not_analyzed",
+              "type": "object",
+              "doc_values": true
+            },
+            "match_mapping_type": "object",
             "match": "*"
           }
         }
@@ -57,7 +88,7 @@ Following is the configuration for ElasticSearch's template. Run `curl -XPOST ht
       },
       "_source": {
         "compress": true
-      }
+      },
       "properties": {
         "geoip": {
           "dynamic": true,
