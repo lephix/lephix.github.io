@@ -12,6 +12,8 @@ This post record the way I use them. Here is the versions in my environment.
 - Kibana 4.1.1
 
 ### ElasticSearch Config
+Here is an checklist for [ElasticSearch optimization](https://github.com/garyelephant/blog/blob/master/elasticsearch_optimization_checklist.md)
+
 Following is the configuration for ElasticSearch's template. Run `curl -XPOST http://localhost:9200/_template/logstash -d '%FOLLOWING_JSON_CONTENT%'` to create a index template.
 
 ~~~
@@ -53,6 +55,9 @@ Following is the configuration for ElasticSearch's template. Run `curl -XPOST ht
         "omit_norms": true,
         "enabled": true
       },
+      "_source": {
+        "compress": true
+      }
       "properties": {
         "geoip": {
           "dynamic": true,
