@@ -173,6 +173,7 @@ refresh_interval: 1m
 ~~~
 
 Changing some of the properties in cluster settings could boost the performance too.
+
 ~~~
 PUT /_cluster/settings
 {
