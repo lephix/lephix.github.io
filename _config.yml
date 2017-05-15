@@ -3,4 +3,4 @@ description: Better late than never!
 url: 
 timezone: Asia/Shanghai
 markdown: kramdown
-theme: jekyll-theme-minimal
+theme: jekyll-theme-cayman
