@@ -1,5 +1,5 @@
 ---
-layout: post
+# layout: post
 ---
 This post is for recording the notes while reading [Coding Interviews](http://www.apress.com/9781430247616)
 

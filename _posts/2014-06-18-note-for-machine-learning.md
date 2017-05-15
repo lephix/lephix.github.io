@@ -1,5 +1,5 @@
 ---
-layout: post
+# layout: post
 title: Note for machine learning course from Stanford on Coursera
 ---
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML-full"></script>

@@ -1,5 +1,5 @@
 ---
-layout: post
+# layout: post
 ---
 Following is a simple reverse proxy configuration for Apache2. Put these codes in httpd.conf file.
 

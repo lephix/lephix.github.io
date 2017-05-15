@@ -1,5 +1,5 @@
 ---
-layout: post
+# layout: post
 title: Note for learning Octave
 ---
 This post is for recording memos of learning Octave.

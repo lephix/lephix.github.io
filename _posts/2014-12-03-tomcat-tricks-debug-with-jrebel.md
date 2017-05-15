@@ -1,5 +1,5 @@
 ---
-layout: post
+# layout: post
 title: Tomcat tricks and debugging with JRebel
 ---
 

@@ -1,5 +1,5 @@
 ---
-layout: post
+# layout: post
 title: Simple NTP setup in Linux
 ---
 

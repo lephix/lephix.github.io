@@ -1,5 +1,5 @@
 ---
-layout: post
+# layout: post
 title: 机器学习实战笔记
 includeMathJax: true
 ---

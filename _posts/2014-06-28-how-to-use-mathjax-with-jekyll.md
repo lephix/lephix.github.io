@@ -1,5 +1,5 @@
 ---
-layout: post
+# layout: post
 title: How to use MathJax with Jekyll
 includeMathJax: true
 ---
@@ -25,7 +25,7 @@ If using AsciiMath, import following code.
 > 
 > ~~~
 > ---
->layout: post
+># layout: post
 >title: How to use MathJax with Jekyll
 >includeMathJax: true
 >---
