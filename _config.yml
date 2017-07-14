@@ -3,4 +3,6 @@ description: Better late than never!
 url: 
 timezone: Asia/Shanghai
 markdown: kramdown
+kramdown:
+  input: GFM
 theme: jekyll-theme-tactile
