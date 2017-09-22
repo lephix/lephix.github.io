@@ -57,3 +57,10 @@ Display full path on the top of the Finder window or cancel this function.
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool TRUE; killall Finder
 defaults delete com.apple.finder _FXShowPosixPathInTitle; killall Finder
 ~~~
+
+### Security & Privacy
+Allow opening application from any sources. Some of the cracked application downloaded from third-party website, Mac OS will prevent opening it. After running following command, you can change this policy by choosing "System Properties" -> "Security & privacy" -> "General" -> "Anywhere".
+
+~~~bash
+sudo spctl --master-disable
+~~~
