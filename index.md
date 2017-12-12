@@ -11,3 +11,5 @@ layout: default
     </li>
   {% endfor %}
 </ul>
+
+{% include links.md %}
