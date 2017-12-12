@@ -12,4 +12,4 @@ layout: default
   {% endfor %}
 </ul>
 
-{% include links.md %}
+{% include links.html %}
