@@ -1,6 +1,6 @@
 ---
 title: Useful links and stuffs
-layout: post
+layout: default
 ---
 
 ## Links
