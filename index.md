@@ -4,6 +4,8 @@
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: default
 ---
+<a href=links.html>Useful Links</a>
+<a href=quicknotes.html>Quick Notes</a>
 <ul>
   {% for post in site.posts %}
     <li>
@@ -11,5 +13,3 @@ layout: default
     </li>
   {% endfor %}
 </ul>
-hello
-{% include links.html %}
