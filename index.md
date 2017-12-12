@@ -4,8 +4,10 @@
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: default
 ---
-<a href=links.html>Useful Links</a>
-<a href=quicknotes.html>Quick Notes</a>
+[Useful Links](links.html)
+
+[Quick Notes](quicknotes.html)
+
 <ul>
   {% for post in site.posts %}
     <li>
