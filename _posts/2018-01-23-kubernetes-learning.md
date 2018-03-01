@@ -1,16 +1,17 @@
 # Kubernetes Learning
 
 ## Environment preparation
-+ install kubectl and minikube
++ install kubectl and minikube  
   https://kubernetes.io/docs/tasks/tools/install-minikube/
-+ Info url
+
++ Info url  
   https://kubernetes.io/docs/home/  
   https://github.com/kubernetes/minikube  
   https://yq.aliyun.com/articles/221687  
 
-
 ## Start the environment
 ### start minikube
+You can choose what type of virtual machine will be used. Candidate have xhyve, virtualbox, hyperkit and so on.
 + start minikube
 
         minikube start --vm-driver=xhyve --registry-mirror=https://registry.docker-cn.com  
@@ -47,6 +48,9 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: nginx-test-ingress
+  # following annotation may not necessary.
+  annotations:
+    ingress.kubernetes.io/rewrite-target: / 
 spec:
   backend:
     serviceName: nginx-test
