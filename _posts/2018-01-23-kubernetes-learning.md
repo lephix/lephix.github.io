@@ -1,16 +1,16 @@
 # Kubernetes Learning
 
-# Environment preparation
-+ install minikube
-+ install kubectl 
+## Environment preparation
++ install kubectl and minikube
+  https://kubernetes.io/docs/tasks/tools/install-minikube/
++ Info url
+  https://kubernetes.io/docs/home/  
+  https://github.com/kubernetes/minikube  
+  https://yq.aliyun.com/articles/221687  
 
-https://kubernetes.io/docs/home/
-https://github.com/kubernetes/minikube
-https://yq.aliyun.com/articles/221687
 
-
-# Start the environment
-## start minikube
+## Start the environment
+### start minikube
 + start minikube
 
         minikube start --vm-driver=xhyve --registry-mirror=https://registry.docker-cn.com  
@@ -19,10 +19,10 @@ https://yq.aliyun.com/articles/221687
 
         minikube start --vm-driver=xhyve --docker-env HTTP_PROXY=socks5://127.0.0.1:1086  --docker-env HTTPS_PROXY=socks5://127.0.0.1:1086 
 
-## start the dashboard
+### start the dashboard
     minikube dashboard
 
-## start a service
+### start a service
 + Start a app
 
         kubectl run nginx-test --image=nginx --port=80
@@ -34,7 +34,7 @@ https://yq.aliyun.com/articles/221687
 
         curl $(minikube service nginx-test --url)
 
-## start a ingress for the service
+### start a ingress for the service
 + start ingress for minikube as addons
 
         minikube addons enable ingress
