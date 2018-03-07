@@ -23,6 +23,9 @@ You can choose what type of virtual machine will be used. Candidate have xhyve, 
 ### start the dashboard
     minikube dashboard
 
+### start the API server
+    kubectl proxy --port=8888
+
 ### start a service
 + Start a app
 
@@ -77,3 +80,4 @@ spec:
 + visit the pod through domain
 
         curl nginx-test.com:80
+
