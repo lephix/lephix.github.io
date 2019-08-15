@@ -38,18 +38,6 @@ export M2_HOME=
 
 ## Useful command lines
 
-### Apache2 
-~~~bash
-sudo apachectl -k start|stop|restart
-~~~
-
-### Mysql
-Mysql will be installed at `/usr/local/mysql` through `.DMG` file. Find Mysql control panel in "System Preferences"
-
-~~~bash
-sudo /usr/local/mysql/bin/mysqld_safe
-~~~
-
 ### Finder
 Display full path on the top of the Finder window or cancel this function.
 
@@ -64,3 +52,8 @@ Allow opening application from any sources. Some of the cracked application down
 ~~~bash
 sudo spctl --master-disable
 ~~~
+
+## Userful software
+- Itsycal: a smart calendar
+- IINA: a excellent video player
+
