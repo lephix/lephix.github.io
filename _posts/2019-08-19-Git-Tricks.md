@@ -21,3 +21,6 @@ git add .
 git commit -m "new comments".
 git push
 ```
+
+## Situation: Squash commit
+`git rebase -i HEAD^1`
