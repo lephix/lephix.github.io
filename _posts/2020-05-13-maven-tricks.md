@@ -1,6 +1,10 @@
 
+## Parameters for maven command
++ Specific profile: `-P ${profile}`
++ Force update repository: `-U`
+
 ## Add git info into a static file
-In Sprint Boot, you can directly visit it by url http://host/git.json.
+In SprintBoot, you can directly visit it by url http://host/git.json.
 
 ```
 <plugin>
@@ -28,5 +32,45 @@ In Sprint Boot, you can directly visit it by url http://host/git.json.
             <dirty>-dirty</dirty>
         </gitDescribe>
     </configuration>
+</plugin>
+```
+
+## Custom SpringBoot artifact classifier
+This will change the executable artifact name with a given classifier.
+
+```
+<plugin>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-maven-plugin</artifactId>
+    <executions>
+        <execution>
+            <id>repackage</id>
+            <configuration>
+                <classifier>comic</classifier>
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
+```
+
+## Delete a file from the output and artifact package.
+```
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-antrun-plugin</artifactId>
+    <version>1.8</version>
+    <executions>
+        <execution>
+            <phase>compile</phase>
+            <goals>
+                <goal>run</goal>
+            </goals>
+            <configuration>
+                <tasks>
+                    <delete file="${project.build.outputDirectory}/application-prod.yml"/>
+                </tasks>
+            </configuration>
+        </execution>
+    </executions>
 </plugin>
 ```
