@@ -4,7 +4,7 @@
 + Force update repository: `-U`
 
 ## Add git info into a static file
-In SprintBoot, you can directly visit it by url http://host/git.json.
+In SprintBoot, you can directly visit it by url http://host/git.json. Build time and commit id are included.
 
 ```
 <plugin>
