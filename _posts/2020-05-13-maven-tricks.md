@@ -74,3 +74,15 @@ This will change the executable artifact name with a given classifier.
     </executions>
 </plugin>
 ```
+
+## Fix SpringBoot start timeout problem
+```
+<plugin>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-maven-plugin</artifactId>
+    <configuration>
+        <wait>1000</wait>
+        <maxAttempts>180</maxAttempts>
+    </configuration>
+</plugin>
+```
