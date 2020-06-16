@@ -101,3 +101,20 @@ Use ant plugin
     </configuration>
 </plugin>
 ```
+
+## Unpack dependency before SpringBoot jar execution.
+```
+<plugin>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-maven-plugin</artifactId>
+    <configuration>
+        <!-- Enable io.kubernetes:client-java to find its model classes. -->
+        <requiresUnpack>
+            <dependency>
+                <groupId>io.kubernetes</groupId>
+                <artifactId>client-java-api</artifactId>
+            </dependency>
+        </requiresUnpack>
+    </configuration>
+</plugin>
+```
