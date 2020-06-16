@@ -54,6 +54,21 @@ This will change the executable artifact name with a given classifier.
 ```
 
 ## Delete a file from the output and artifact package.
+Use `<resource>` tag.
+```
+<build>
+    <resources>
+        <resource>
+            <directory>src/main/resources</directory>
+            <excludes>
+                <exclude>comic-*.yml</exclude>
+            </excludes>
+        </resource>
+    </resources>
+</build>
+```
+
+Use ant plugin
 ```
 <plugin>
     <groupId>org.apache.maven.plugins</groupId>
