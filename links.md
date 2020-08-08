@@ -13,6 +13,8 @@ layout: default
 + RxJava. [link](http://gank.io/post/560e15be2dca930e00da1083#toc_1)
 + Runkit.com a online javascript notebook.[link](http://runkit.com)
 + Excalidraw is a online graphic drawing tool with handwrite style. [link](https://excalidraw.com)
++ microk8s.io is a full feature k8s env for laptop or server. [link](https://microk8s.io)
++ asciinema.org is a Terminal recorder with pure text based solution. [link](https://asciinema.org)
 
 ## Stuffs
 
