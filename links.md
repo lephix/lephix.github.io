@@ -20,5 +20,5 @@ layout: default
 
 
 ## Vault
-+ 标准国际银行 standard international bank [link](https://ebank.standardintbank.com) 6digit + changsha code without 0
++ 标准国际银行 standard international bank [link](https://ebank.standardintbank.com) 6digit + (cs code - 0)
 
