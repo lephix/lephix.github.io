@@ -21,7 +21,7 @@ setenv MAVEN_OPTS "-Xmx1024M -XX:MaxPermSize=512m"
 setenv M2_HOME /Applications/Dev/apache-maven
 ~~~
 
-: [Use ZSH instead](//2020/01/12/tricks-for-using-zsh.html)
+> [Use ZSH instead](//2020/01/12/tricks-for-using-zsh.html)
 
 ## Bash setting
 `~/.bash_profile` will be executed for every time an Terminal get started for the specific user.  
@@ -37,7 +37,7 @@ export JAVA_HOME=
 export M2_HOME=
 ~~~
 
-: [Use ZSH instead](//2020/01/12/tricks-for-using-zsh.html)
+> [Use ZSH instead](//2020/01/12/tricks-for-using-zsh.html)
 
 ## Useful command lines
 
@@ -71,7 +71,7 @@ Content of the DefaultKeyBinding.dict
 "$^\UF72B" = "moveToEndOfDocumentAndModifySelection:"; 
 }
 ```
-: Restart required.
+> Restart required.
 
 ### Finder
 Display full path on the top of the Finder window or cancel this function.
