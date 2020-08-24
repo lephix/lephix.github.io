@@ -21,6 +21,7 @@ setenv MAVEN_OPTS "-Xmx1024M -XX:MaxPermSize=512m"
 setenv M2_HOME /Applications/Dev/apache-maven
 ~~~
 
+: [Use ZSH instead](//2020/01/12/tricks-for-using-zsh.html)
 
 ## Bash setting
 `~/.bash_profile` will be executed for every time an Terminal get started for the specific user.  
@@ -36,14 +37,48 @@ export JAVA_HOME=
 export M2_HOME=
 ~~~
 
+: [Use ZSH instead](//2020/01/12/tricks-for-using-zsh.html)
+
 ## Useful command lines
+
+### HOME and END key binding
+Enable HOME and END key working like normal.
+```
+sudo bash 
+mkdir -p ~/Library/KeyBindings ; cd ~/Library/KeyBindings
+vim DefaultKeyBinding.dict
+```
+
+Content of the DefaultKeyBinding.dict
+```
+{
+/* Remap Home / End keys */
+/* Home Button*/
+"\UF729" = "moveToBeginningOfLine:"; 
+/* End Button */
+"\UF72B" = "moveToEndOfLine:"; 
+/* Shift + Home Button */
+"$\UF729" = "moveToBeginningOfLineAndModifySelection:"; 
+/* Shift + End Button */
+"$\UF72B" = "moveToEndOfLineAndModifySelection:"; 
+/* Ctrl + Home Button */
+"^\UF729" = "moveToBeginningOfDocument:"; 
+/* Ctrl + End Button */
+"^\UF72B" = "moveToEndOfDocument:"; 
+ /* Shift + Ctrl + Home Button */
+"$^\UF729" = "moveToBeginningOfDocumentAndModifySelection:";
+/* Shift + Ctrl + End Button*/
+"$^\UF72B" = "moveToEndOfDocumentAndModifySelection:"; 
+}
+```
+: Restart required.
 
 ### Finder
 Display full path on the top of the Finder window or cancel this function.
 
 ~~~bash
-defaults write com.apple.finder _FXShowPosixPathInTitle -bool TRUE; killall Finder
-defaults delete com.apple.finder _FXShowPosixPathInTitle; killall Finder
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool TRUE; killall Finder # enable
+defaults delete com.apple.finder _FXShowPosixPathInTitle; killall Finder # disable
 ~~~
 
 ### Security & Privacy
