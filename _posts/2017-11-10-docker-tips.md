@@ -26,6 +26,18 @@ docker run hello-world # start a test docker
 docker-machine stop default
 ```
 
+## docker-machine commands
+```bash
+docker-machine active         # display the active docker machine.
+docker-machine env $name      # display environment for accessing the docker machine.
+eval $(docker-machine env $name)           # set the environment for the docker machine.
+eval $(docker-machine env -u)              # clean the environment.
+docker-machine ip $name       # get ip for the docker machine.
+curl $(docker-machine ip $name):80         # curl a web page provided by the docker.
+docker-machine ssh $name      # ssh to the docker machine.
+docker-machine scp ~/localfiletxt $name:~/ # scp a local file to docker machine, or vice versa.
+```
+
 ## curl Host in Container
 There is a DNS name with "docker.for.mac.localhost" in Mac and "docker.for.win.localhost" in Windows. For instance:
 ```bash
