@@ -13,6 +13,7 @@ brew install docker-compose
 
 # start
 docker-machine create --driver virtualbox default
+docker-machine create --engine-registry-mirror=https://luddtcwl.mirror.aliyuncs.com -d virtualbox default # create a docker machine with mirror
 docker-machine ls # check the engine
 docker-machine start default
 docker-machine ls # check again
