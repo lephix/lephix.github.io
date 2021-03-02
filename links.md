@@ -18,6 +18,7 @@ layout: default
 + RxJava. [link](http://gank.io/post/560e15be2dca930e00da1083#toc_1)
 + microk8s.io is a full feature k8s env for laptop or server. [link](https://microk8s.io)
 + RECOMMEND! Lots of repos' mirror: https://mirrors.ustc.edu.cn/
++ Git commit convention. [link](https://www.conventionalcommits.org)
 
 
 ## Stuffs
