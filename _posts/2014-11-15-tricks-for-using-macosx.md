@@ -91,4 +91,6 @@ sudo spctl --master-disable
 ## Userful software
 - Itsycal: a smart calendar
 - IINA: a excellent video player
+- iShot: a full feature screenshot tool
+- CopyClip: a paste manager tool
 
