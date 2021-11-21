@@ -23,7 +23,7 @@ layout: default
 
 
 ## Stuffs
-
++ OmniPlayer, paid Mac video player.
 
 ## Vault
 + 标准国际银行 standard international bank [link](https://ebank.standardintbank.com) 6digit + (cs code - 0)
