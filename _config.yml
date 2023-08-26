@@ -1,8 +1,15 @@
 name: Lephix's Blog
 description: Better late than never!
-url: 
+url: https://www.lephix.com
 timezone: Asia/Shanghai
 markdown: kramdown
 kramdown:
   input: GFM
 theme: minima
+
+minima:
+  skin: dark
+  social_links:
+    - { platform: github, user_url: "http://github.com/lephix" }
+  header_pages:
+    - links.md 
