@@ -11,7 +11,7 @@ Check the status and the config.json file path.
 sudo systemctl status v2ray
 ```
 
-Update `config.json` content, you can change the `port` and `id` settings. `id` could be regenerated at `https://www.uuidgenerator.net/` with version 4.
+Update `/usr/local/etc/v2ray/config.json` content, you can change the `port` and `id` settings. `id` could be regenerated at `https://www.uuidgenerator.net/` with version 4.
 ```json
 {
   "inbounds": [{
@@ -76,3 +76,6 @@ Start the v2ray client.
 ```bash
 ./v2ray
 ```
+
+## Tips
++ Change the firewall policy if the port is not reachable with command `sudo iptables -I INPUT 6 -m state --state NEW -p tcp --dport 80 -j ACCEPT`.
