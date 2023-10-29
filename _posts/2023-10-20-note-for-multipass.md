@@ -14,7 +14,7 @@ brew install --cask microsoft-remote-desktop
 ## Usage
 Create a VM. `impish` is the version of Ubuntu. Use `multipass find` to get a version list.
 ```bash
-multipass launch --name vm1 --mem 2G --disk 40G --cpus 2 impish
+multipass launch --name vm1 --memory 2G --disk 40G --cpus 2 impish
 ```
 
 Get a configuration of a VM.
