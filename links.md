@@ -28,3 +28,5 @@ layout: default
 ## Vault
 + 标准国际银行 standard international bank [link](https://ebank.standardintbank.com) 6digit + (cs code - 0)
 
+## Books
++ Book: [How to Build a career in AI ](./resources/eBook-How-to-Build-a-Career-in-AI.pdf)
