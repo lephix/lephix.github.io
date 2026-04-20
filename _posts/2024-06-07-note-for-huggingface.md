@@ -1,5 +1,7 @@
 ---
 title: Note for HuggingFace
+categories: [Misc]
+tags: [huggingface, ai]
 ---
 
 # Prepare envrionment
@@ -17,4 +19,3 @@ RUN apt update && apt install vim
 # install transformers
 RUN pip install -i https://pypi.tuna.tsinghua.edu.cn/simple transformers
 ```
-

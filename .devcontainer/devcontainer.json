@@ -1,0 +1,32 @@
+{
+  "name": "Jekyll Chirpy Blog",
+  "image": "mcr.microsoft.com/devcontainers/jekyll:2-bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "lts"
+    }
+  },
+  "onCreateCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
+  "postCreateCommand": "bundle install",
+  "forwardPorts": [4000, 35729],
+  "portsAttributes": {
+    "4000": {
+      "label": "Jekyll Server",
+      "onAutoForward": "notify"
+    },
+    "35729": {
+      "label": "Live Reload",
+      "onAutoForward": "silent"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "yzhang.markdown-all-in-one",
+        "mhutchie.git-graph"
+      ]
+    }
+  },
+  "remoteUser": "vscode"
+}

@@ -1,6 +1,7 @@
 ---
-# layout: post
 title: Note for learning Octave
+categories: [Learning]
+tags: [octave]
 ---
 This post is for recording memos of learning Octave.
 

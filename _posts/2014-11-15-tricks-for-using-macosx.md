@@ -1,6 +1,7 @@
 ---
-# layout: post
 title: Tricks for using Mac OS X
+categories: [System]
+tags: [macos]
 ---
 
 ## System wide variables setting (including GUI application)
@@ -93,4 +94,3 @@ sudo spctl --master-disable
 - IINA: a excellent video player
 - iShot: a full feature screenshot tool
 - CopyClip: a paste manager tool
-

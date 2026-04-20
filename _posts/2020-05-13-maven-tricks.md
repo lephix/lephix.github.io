@@ -1,3 +1,8 @@
+---
+title: "Maven Tricks"
+categories: [Programming]
+tags: [maven]
+---
 
 ## Parameters for maven command
 + Specific profile: `-P ${profile}`

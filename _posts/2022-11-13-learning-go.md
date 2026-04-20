@@ -1,4 +1,8 @@
-# Learning Go
+---
+title: "Learning Go"
+categories: [Programming]
+tags: [go]
+---
 
 ## Get dev environment ready
 ### Install Go on Mac (with homebrew)

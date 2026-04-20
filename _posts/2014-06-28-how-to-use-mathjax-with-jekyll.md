@@ -1,7 +1,8 @@
 ---
-# layout: post
 title: How to use MathJax with Jekyll
-includeMathJax: true
+math: true
+categories: [Misc]
+tags: [mathjax, jekyll]
 ---
 
 #### 1. Import appropriate MathJax library in your page

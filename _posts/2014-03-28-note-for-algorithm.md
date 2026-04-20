@@ -1,5 +1,7 @@
 ---
-# layout: post
+title: "Note for Algorithm"
+categories: [Learning]
+tags: [algorithm]
 ---
 This post is the note for the algorithm course on [Coursera](http://www.coursera.com).
 

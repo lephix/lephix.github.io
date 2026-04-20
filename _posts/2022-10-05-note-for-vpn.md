@@ -1,4 +1,9 @@
-# OpenVPN on a server
+---
+title: "OpenVPN on a Server"
+categories: [DevOps]
+tags: [vpn, openvpn]
+---
+
 This article shows how to install OpenVPN on a server. 
 
 ## Install OpenVPN server

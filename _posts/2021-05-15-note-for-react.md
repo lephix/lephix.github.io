@@ -1,4 +1,8 @@
-# Note for React
+---
+title: "Note for React"
+categories: [Programming]
+tags: [react]
+---
 
 ## links
 
@@ -63,4 +67,3 @@ import ReactDOM from 'react-dom';
 const word = 'React';
 ReactDOM.render(<App people={ ['Alpha', 'Beta'] }></App>, document.getElementById('root'));
 ```
-

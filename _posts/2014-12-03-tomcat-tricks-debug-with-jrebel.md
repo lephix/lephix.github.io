@@ -1,6 +1,7 @@
 ---
-# layout: post
 title: Tomcat tricks and debugging with JRebel
+categories: [Programming]
+tags: [tomcat, java]
 ---
 
 ### Tomcat Tricks
@@ -42,4 +43,3 @@ export JAVA_OPTS="-javaagent:/Library/jrebel/jrebel.jar -Drebel.remoting_plugin=
 Create a new remote debug, and set the port to 8000. It is better to install a JRebel plugin, it help you to redeploy latest changes to Tomcat.
 
 Register JRebel at [My JRebel](https://my.jrebel.com).
-

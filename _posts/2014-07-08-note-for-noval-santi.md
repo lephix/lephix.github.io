@@ -1,6 +1,7 @@
 ---
-# layout: post
 title: 《三体》章节简述
+categories: [Misc]
+tags: [novel, 三体]
 ---
 
 ## 第一部

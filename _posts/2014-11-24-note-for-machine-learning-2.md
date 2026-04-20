@@ -1,7 +1,8 @@
 ---
-# layout: post
 title: 机器学习实战笔记
-includeMathJax: true
+math: true
+categories: [Learning]
+tags: [machine-learning]
 ---
 
 ## k-近邻算法 kNN

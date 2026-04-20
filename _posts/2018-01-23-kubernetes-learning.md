@@ -1,4 +1,8 @@
-# Kubernetes Learning
+---
+title: "Kubernetes Learning"
+categories: [DevOps]
+tags: [kubernetes]
+---
 
 ## Environment preparation
 + install kubectl and minikube  
@@ -80,4 +84,3 @@ spec:
 + visit the pod through domain
 
         curl nginx-test.com:80
-

@@ -1,4 +1,8 @@
-# Note for v2ray
+---
+title: "Note for V2ray"
+categories: [DevOps]
+tags: [v2ray, proxy]
+---
 
 ## Server installation
 Install on the server.

@@ -1,3 +1,9 @@
+---
+title: "OCR Java Translation"
+categories: [Programming]
+tags: [ocr, java]
+---
+
 ## 1. Tesseract: 简单的Java光学字符识别
 
 ### 1.1 介绍

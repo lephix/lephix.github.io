@@ -1,5 +1,7 @@
 ---
 title: Tricks for using Zsh
+categories: [System]
+tags: [zsh, shell]
 ---
 
 ## Introduction
@@ -46,6 +48,5 @@ For Mac: `brew install zsh`
   * powerlevel10k
 
   A very geek style theme, make zsh start faster. https://github.com/romkatv/powerlevel10k. Follow the guide to Install `MesloLGS NF font`, change prompt style and so on.
-
 
 

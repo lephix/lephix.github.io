@@ -1,4 +1,9 @@
-# mysql server run command
+---
+title: "MySQL Tricks"
+categories: [Programming]
+tags: [mysql]
+---
+
 `docker run -p 3306:3306 --name mysql57 -v /data/mysql57:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=$PASSWORD -d mysql:5.7`
 
 # mysql client

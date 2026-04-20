@@ -1,5 +1,7 @@
 ---
-# layout: post
+title: "Base Knowledge of Linear Algebra"
+categories: [Learning]
+tags: [linear-algebra]
 ---
 ### Matrix
 
@@ -46,4 +48,3 @@
 ### Vector
 
   Vector is a matrix with only on column.
-

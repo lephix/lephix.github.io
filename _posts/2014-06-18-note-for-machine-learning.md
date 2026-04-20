@@ -1,9 +1,9 @@
 ---
-# layout: post
 title: Note for machine learning course from Stanford on Coursera
+math: true
+categories: [Learning]
+tags: [machine-learning, coursera]
 ---
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML-full"></script>
-
 ## Supervised Learning
 
   Given the "right answer" for each example in the data

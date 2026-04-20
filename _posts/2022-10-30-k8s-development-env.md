@@ -1,4 +1,8 @@
-# K8s Development Environment
+---
+title: "K8s Development Environment"
+categories: [DevOps]
+tags: [kubernetes, k3s]
+---
 
 Install a mini K8s env for development.
 

@@ -1,4 +1,9 @@
-# Grafana使用手册
+---
+title: "Grafana使用手册"
+categories: [DevOps]
+tags: [grafana]
+---
+
 ## 简介
 一个开源的数据可视化工具，有丰富的插件和功能强大的仪表盘配置。
 ## 安装和使用

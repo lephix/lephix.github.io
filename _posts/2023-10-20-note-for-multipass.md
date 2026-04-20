@@ -1,4 +1,8 @@
-# Note for Multipass
+---
+title: "Note for Multipass"
+categories: [DevOps]
+tags: [multipass, vm]
+---
 
 ## Install for Mac
 Install multipass.

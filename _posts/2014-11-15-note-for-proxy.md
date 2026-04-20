@@ -1,5 +1,7 @@
 ---
-# layout: post
+title: "Note for Proxy"
+categories: [DevOps]
+tags: [proxy, ssh]
 ---
 
 ## SSH tunning proxy

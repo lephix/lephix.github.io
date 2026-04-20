@@ -1,6 +1,7 @@
 ---
-# layout: post
 title: Note for Redis
+categories: [Programming]
+tags: [redis]
 ---
 
 Redis is an open source, BSD licensed, advanced key-value cache and store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets, sorted sets, bitmaps and hyperloglogs.
@@ -378,4 +379,3 @@ It's very easy to set slaves for a Redis server. Just set `slaveof MASTER-IP MAS
 #### Principle
 
 When a slave server started, will send `SYNC` command to master server. Master server will take a snapshot of current dataset (The same as taking a RDB save), new data changes will be cached. Master will send the snapshot and cache to slave server.
-

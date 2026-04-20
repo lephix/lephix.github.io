@@ -1,5 +1,7 @@
 ---
-# layout: post
+title: "Simple Apache Reverse Proxy Configuration"
+categories: [DevOps]
+tags: [apache, proxy]
 ---
 Following is a simple reverse proxy configuration for Apache2. Put these codes in httpd.conf file.
 

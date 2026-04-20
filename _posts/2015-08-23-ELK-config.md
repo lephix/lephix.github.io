@@ -1,6 +1,7 @@
 ---
-# layout: post
 title: ELK configuration
+categories: [DevOps]
+tags: [elk]
 ---
 
 ELK means ElasticSearch + Logstash + Kibana. These products could provide a convenient way to analyze all kinds of logs.

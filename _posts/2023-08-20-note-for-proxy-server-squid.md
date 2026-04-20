@@ -1,4 +1,8 @@
-# Note for proxy server Squid
+---
+title: "Note for Proxy Server Squid"
+categories: [DevOps]
+tags: [squid, proxy]
+---
 
 ## Installation
 

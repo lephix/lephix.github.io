@@ -1,5 +1,7 @@
 ---
 title: Note for Ghostty
+categories: [Misc]
+tags: [ghostty, terminal]
 ---
 
 # Ghostty 配置笔记

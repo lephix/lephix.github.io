@@ -1,4 +1,8 @@
-# Docker tips
+---
+title: "Docker Tips"
+categories: [DevOps]
+tags: [docker]
+---
 
 ## install for Mac with brew
 ```bash

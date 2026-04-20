@@ -1,15 +1,112 @@
-name: Lephix's Blog
-description: Better late than never!
-url: https://www.lephix.com
-timezone: Asia/Shanghai
-markdown: kramdown
-kramdown:
-  input: GFM
-theme: minima
+# The Site Configuration
+theme: jekyll-theme-chirpy
 
-minima:
-  skin: dark
-  social_links:
-    - { platform: github, user_url: "http://github.com/lephix" }
-  header_pages:
-    - links.md 
+lang: en
+timezone: Asia/Shanghai
+
+title: Lephix's Blog
+tagline: Better late than never!
+
+description: >-
+  Lephix's personal blog about software engineering, DevOps, and technology.
+
+url: "https://www.lephix.com"
+
+github:
+  username: lephix
+
+social:
+  name: Lephix
+  links:
+    - https://github.com/lephix
+
+# Site Verification Settings
+webmaster_verifications:
+  google: google514b210ae3c32b68
+
+# Prefer color scheme setting.
+# Keep empty will follow the system prefer color by default.
+theme_mode: # [light | dark]
+
+# the avatar on sidebar, support local or CORS resources
+avatar:
+
+toc: true
+
+comments:
+  provider: # [disqus | utterances | giscus]
+
+paginate: 10
+
+baseurl: ""
+
+# ------------ The following options are not recommended to be modified ------------------
+
+kramdown:
+  footnote_backlink: "&#8617;&#xfe0e;"
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+collections:
+  tabs:
+    output: true
+    sort_by: order
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: true
+      toc: true
+      permalink: /posts/:title/
+  - scope:
+      path: _drafts
+    values:
+      comments: false
+  - scope:
+      path: ""
+      type: tabs
+    values:
+      layout: page
+      permalink: /:title/
+
+sass:
+  style: compressed
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: [development]
+
+exclude:
+  - "*.gem"
+  - "*.gemspec"
+  - docs
+  - tools
+  - README.md
+  - LICENSE
+  - purgecss.js
+  - "*.config.js"
+  - "package*.json"
+  - bak
+
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/

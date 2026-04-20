@@ -1,4 +1,8 @@
-# Git tricks
+---
+title: "Git Tricks"
+categories: [Programming]
+tags: [git]
+---
 
 ## Situation: Local changes is not committed.
 

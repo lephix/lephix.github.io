@@ -1,4 +1,7 @@
 ---
+title: "Python Tricks"
+categories: [Programming]
+tags: [python]
 ---
 
 ## virtualevn
